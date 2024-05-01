@@ -21,6 +21,13 @@ return new class extends Migration
             $table->unsignedInteger('created_at');
         });
 
+        Schema::create('posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->text('content');
+            $table->timestamps();
+        });
+
         Schema::create('job_batches', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
